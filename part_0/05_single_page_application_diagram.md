@@ -17,8 +17,8 @@ sequenceDiagram
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate server
-    server-->>browser: the JavaScript file, ...I´ts amazing
+    server-->>browser: the JavaScript file
     deactivate server
 
-    Note right of browser: The SPA loads and fetches any necessary data for initial view
+    Note right of browser: The SPA loads and fetches any necessary data for initial view (...I´ts amazing)
 ```

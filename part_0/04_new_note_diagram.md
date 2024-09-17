@@ -25,10 +25,10 @@ sequenceDiagram
     server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
     deactivate server
 
-    Note right of browser: User writes a new note and clicks "Save"
+    Note right of browser: The User writes a new note and clicks "Save"
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    Note right of browser: { "content": "New Note Content", "date": "2023-09-17" }
+    Note right of browser: { "content": "New Note Content example MC", "date": "2023-09-17" }
     activate server
     server-->>browser: Confirmation of note creation
     deactivate server

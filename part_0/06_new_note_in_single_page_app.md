@@ -1,32 +1,47 @@
 ```mermaid
 sequenceDiagram
-    participant browser
-    participant server
+    participant browser as "Speedy Browser"
+    participant server as "Wise Server"
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
-    server-->>browser: HTML document with SPA setup
+    server-->>browser: Redirection message (Don’t go anywhere!)
     deactivate server
+
+    Note right of browser: "The browser wonders if it did the right thing sending the note."
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: HTML document (The key to the content!)
+    deactivate server
+
+    Note right of server: "Server: ‘Hope you find this HTML delightful.’"
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
-    server-->>browser: the css file
+    server-->>browser: CSS file (Making sure it doesn’t look too dull!)
     deactivate server
+
+    Note right of browser: "The browser starts feeling the page is getting stylish."
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate server
-    server-->>browser: the JavaScript file
+    server-->>browser: JavaScript file (Let’s make the page come alive!)
     deactivate server
 
-    Note right of browser: SPA initializes and fetches existing notes
+    Note right of browser: "The browser gets into action mode to run the JavaScript."
 
-    Note right of browser: User writes a new note and clicks "Save"
-
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    Note right of browser: { "content": "New Note Content", "date": "2023-09-17" }
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: Confirmation of note creation
+    server-->>browser: JSON file (Here’s the data you asked for!)
     deactivate server
 
-    Note right of browser: The SPA updates the view with the new note without reloading the page
+    Note right of server: "Server: ‘Don’t worry, here’s your JSON. Ready to be used!’"
+
+    browser->>server: GET https://studies.cs.helsinki.fi/favicon.ico
+    activate server
+    server-->>browser: Favicon file (The final touch for the page!)
+    deactivate server
+
+    Note right of browser: "The browser feels complete with the favicon; the page now has style!"
     ```

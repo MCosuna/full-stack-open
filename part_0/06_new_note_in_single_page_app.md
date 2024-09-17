@@ -1,47 +1,47 @@
 ```mermaid
 sequenceDiagram
-    participant browser as "Speedy Browser"
-    participant server as "Wise Server"
+    participant browser as "Navegador Rápido"
+    participant server as "Servidor Sabio"
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
-    server-->>browser: Redirection message (Don’t go anywhere!)
+    server-->>browser: Mensaje de redirección (¡No te vayas!)
     deactivate server
 
-    Note right of browser: "The browser wonders if it did the right thing sending the note."
+    Note right of browser: "El navegador se pregunta si hizo lo correcto enviando la nota."
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
-    server-->>browser: HTML document (The key to the content!)
+    server-->>browser: Documento HTML (¡La clave del contenido!)
     deactivate server
 
-    Note right of server: "Server: ‘Hope you find this HTML delightful.’"
+    Note right of server: "Servidor: 'Espero que este HTML te guste.'"
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
-    server-->>browser: CSS file (Making sure it doesn’t look too dull!)
+    server-->>browser: Archivo CSS (¡Para que no se vea todo tan aburrido!)
     deactivate server
 
-    Note right of browser: "The browser starts feeling the page is getting stylish."
+    Note right of browser: "El navegador empieza a notar que la página se está poniendo elegante."
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate server
-    server-->>browser: JavaScript file (Let’s make the page come alive!)
+    server-->>browser: Archivo JavaScript (¡Vamos a darle vida a la página!)
     deactivate server
 
-    Note right of browser: "The browser gets into action mode to run the JavaScript."
+    Note right of browser: "El navegador se prepara para ejecutar el JavaScript."
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: JSON file (Here’s the data you asked for!)
+    server-->>browser: Archivo JSON (¡Aquí tienes los datos que pediste!)
     deactivate server
 
-    Note right of server: "Server: ‘Don’t worry, here’s your JSON. Ready to be used!’"
+    Note right of server: "Servidor: 'No te preocupes, aquí está tu JSON. ¡Listo para usar!'"
 
     browser->>server: GET https://studies.cs.helsinki.fi/favicon.ico
     activate server
-    server-->>browser: Favicon file (The final touch for the page!)
+    server-->>browser: Archivo favicon (¡El toque final para la página!)
     deactivate server
 
-    Note right of browser: "The browser feels complete with the favicon; the page now has style!"
+    Note right of browser: "El navegador se siente completo con el favicon; ¡la página ahora tiene estilo!"
     ```
